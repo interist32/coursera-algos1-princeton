@@ -1,0 +1,16 @@
+{
+  "name": "princeton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "w1test": "jest week-1",
+    "percolation": "node ./week-1/assignment"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
