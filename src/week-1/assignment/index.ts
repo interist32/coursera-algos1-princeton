@@ -1,4 +1,4 @@
-const PercolationStats = require('./percolation-stats');
+import PercolationStats from './percolation-stats';
 
 
 const tests = [

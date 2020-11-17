@@ -1,4 +1,6 @@
-const UnionFind = require('../quick-union');
+import QuickUnionWeightedWithPathCompression from '../quick-union-weighted-with-path-compression';
+import UnionFindBase from '../union-find-base';
+
 
 /**
  * Model of percolation system.
@@ -12,13 +14,20 @@ const UnionFind = require('../quick-union');
  * - All instance methods must take constant time plus a constant number of
  * calls to `union()` and `find()`.
  */
-class Percolation {
-  constructor(n) {
+export default class Percolation {
+  private readonly grid: boolean[][];
+  private readonly unionFind: UnionFindBase;
+  private readonly virtualTop: number;
+  private readonly virtualBottom: number;
+  private openSites: number;
+
+
+  constructor(n: number) {
     this.grid =
         Array.from({length: n}, () => Array.from({length: n}, () => false));
 
     // Sites + virtual top + virtual bottom
-    this.unionFind = new UnionFind(n * n + 2);
+    this.unionFind = new QuickUnionWeightedWithPathCompression(n * n + 2);
 
     this.virtualTop = 0;
     this.virtualBottom = n * n + 1;
@@ -26,7 +35,7 @@ class Percolation {
     this.openSites = 0;
   }
 
-  open(row, col) {
+  open(row: number, col: number) {
     this.assertNotZero(row);
     this.assertNotZero(col);
 
@@ -62,14 +71,14 @@ class Percolation {
     this.openSites++;
   }
 
-  isOpen(row, col) {
+  isOpen(row: number, col: number): boolean {
     this.assertNotZero(row);
     this.assertNotZero(col);
 
     return this.grid[row - 1][col - 1];
   }
 
-  isFull(row, col) {
+  isFull(row: number, col: number): boolean {
     this.assertNotZero(row);
     this.assertNotZero(col);
 
@@ -77,11 +86,11 @@ class Percolation {
         this.virtualTop, this.flattenSiteIndex(row, col));
   }
 
-  numberOfOpenSites() {
+  numberOfOpenSites(): number {
     return this.openSites;
   }
 
-  percolates() {
+  percolates(): boolean {
     return this.unionFind.connected(this.virtualTop, this.virtualBottom);
   }
 
@@ -89,14 +98,12 @@ class Percolation {
     if (value === 0) throw new Error('Argument can not be 0');
   }
 
-  flattenSiteIndex(row, col) {
+  flattenSiteIndex(row: number, col: number) {
     return (row - 1) * this.grid.length + col;
   }
 
-  isInGrid(row, col) {
+  isInGrid(row: number, col: number): boolean {
     return (row >= 1 && row <= this.grid.length) &&
         (col >= 1 && col <= this.grid.length);
   }
 }
-
-module.exports = Percolation;

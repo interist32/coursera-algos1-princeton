@@ -48,5 +48,3 @@ export default function testLibrary(Library) {
     }
   }
 }
-
-module.exports = testLibrary;

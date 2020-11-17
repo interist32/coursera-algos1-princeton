@@ -1,8 +1,12 @@
-const Percolation = require('./percolation');
+import Percolation from './percolation';
 
 
-class PercolationStats {
-  constructor(n, trials) {
+export default class PercolationStats {
+  private readonly n: number;
+  private readonly percolation: Percolation;
+  private readonly results: number[];
+
+  constructor(n: number, trials: number) {
     if (n < 1 || trials < 1)
       throw new Error('Arguments should be a positive number');
 
@@ -23,12 +27,12 @@ class PercolationStats {
     }
   }
 
-  mean() {
+  mean(): number {
     return this.results.reduce((acc, cur) => acc + cur, 0) /
         this.results.length;
   }
 
-  stddev() {
+  stddev(): number {
     const mean = this.mean();
     // sd = sqrt(sum(x-mean)**2 / N)
     const sum = this.results.map((res) => (res - mean) ** 2)
@@ -36,21 +40,19 @@ class PercolationStats {
     return Math.sqrt(sum / this.results.length);
   }
 
-  confidenceLo() {
+  confidenceLo(): number {
     return this.mean() -
         1.96 * this.stddev() / (Math.sqrt(this.results.length));
   }
 
-  confidenceHi() {
+  confidenceHi(): number {
     return this.mean() +
         1.96 * this.stddev() / (Math.sqrt(this.results.length));
   }
 
-  getRandomInt(min, max) {
+  getRandomInt(min: number, max: number): number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
-
-module.exports = PercolationStats;
