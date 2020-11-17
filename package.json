@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "w1test": "jest week-1",
-    "percolation": "node ./week-1/assignment"
+    "clean": "del-cli ./dist",
+    "build": "npm run clean && tsc",
+    "test": "jest dist",
+    "w1test": "npm run build && jest dist/week-1",
+    "percolation": "npm run build && node ./dist/week-1/assignment"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "del-cli": "^3.0.1",
     "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "typescript": "^4.0.5"
   }
 }

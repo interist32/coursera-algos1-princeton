@@ -1,9 +1,8 @@
-const testLibrary = require('./test-helper');
-const QuickFind = require('./quick-find');
-const QuickUnion = require('./quick-union');
-const QuickUnionWeighted = require('./quick-union-weighted');
-const QuickUnionWeightedWithPathCompression =
-    require('./quick-union-weighted-with-path-compression');
+import QuickFind from './quick-find';
+import QuickUnion from './quick-union';
+import QuickUnionWeighted from './quick-union-weighted';
+import QuickUnionWeightedWithPathCompression from './quick-union-weighted-with-path-compression';
+import testLibrary from './test-helper';
 
 
 describe('Union Find libraries', () => {

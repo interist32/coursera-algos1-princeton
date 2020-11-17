@@ -1,9 +1,7 @@
-class QuickFind {
-  constructor(n) {
-    this.ids = Array.from({length: n}, (i, ind) => ind);
-  }
+import UnionFindBase from './union-find-base';
 
-  union(p, q) {
+export default class QuickFind extends UnionFindBase {
+  union(p: number, q: number) {
     const pid = this.ids[p];
     const qid = this.ids[q];
     for (let i = 0; i < this.ids.length; i++) {
@@ -13,9 +11,7 @@ class QuickFind {
     }
   }
 
-  connected(p, q) {
+  connected(p: number, q: number) {
     return this.ids[p] === this.ids[q];
   }
 }
-
-module.exports = QuickFind;

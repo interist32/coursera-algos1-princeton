@@ -1,5 +1,5 @@
 # [Algorithms Part 1](https://www.coursera.org/learn/algorithms-part1) by Princeton University
-Self-study "workbook" for programming assignments implemented in Javascript or Typescript.
+Self-study "workbook" for programming assignments implemented in Typescript.
 
 ```
 npm install

@@ -29,7 +29,7 @@ const testCases = [
   },
 ];
 
-function testLibrary(Library) {
+export default function testLibrary(Library) {
   for (const test of testCases) {
     const unionFind = new Library(test.numberOfNodes);
 

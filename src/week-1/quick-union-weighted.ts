@@ -1,13 +1,15 @@
-const QuickUnion = require('./quick-union');
+import QuickUnion from './quick-union';
 
 
-class QuickUnionWeighted extends QuickUnion {
-  constructor(n) {
+export default class QuickUnionWeighted extends QuickUnion {
+  private readonly sizes: number[];
+
+  constructor(n: number) {
     super(n);
     this.sizes = Array.from({length: n}, () => 1);
   }
 
-  union(p, q) {
+  union(p: number, q: number) {
     const pRoot = this.getRoot(p);
     const qRoot = this.getRoot(q);
     if (this.sizes[pRoot] > this.sizes[qRoot]) {
@@ -19,5 +21,3 @@ class QuickUnionWeighted extends QuickUnion {
     }
   }
 }
-
-module.exports = QuickUnionWeighted;
