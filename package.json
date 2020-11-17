@@ -8,7 +8,8 @@
     "build": "npm run clean && tsc",
     "test": "jest dist",
     "w1test": "npm run build && jest dist/week-1",
-    "percolation": "npm run build && node ./dist/week-1/assignment"
+    "percolation": "npm run build && node ./dist/week-1/assignment",
+    "w2test": "npm run build && jest dist/week-2"
   },
   "author": "",
   "license": "ISC",

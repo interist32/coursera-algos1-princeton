@@ -19,3 +19,11 @@ npm run w1test
 ```
 npm run percolation
 ```
+
+## Week 2
+### Stacks and Queues
+* Stack w/linked list
+* Stack w/array
+```
+npm run w2test
+```
