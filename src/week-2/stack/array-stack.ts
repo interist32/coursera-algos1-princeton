@@ -11,21 +11,30 @@ export class ArrayStack<T> implements Stack<T> {
 
   push(item: T) {
     this.array[this.nextPosition++] = item;
+
     if (this.nextPosition === this.array.length) {
-      // double the length once the size limit is reached
-      this.array =
-          [...this.array, Array.from({length: this.array.length}, () => null)];
+      this.resize(this.array.length * 2);
     }
   }
 
   pop(): T {
     this.nextPosition--;
     const item = this.array[this.nextPosition];
-    this.array = this.array.slice(0, this.nextPosition);
+    if (this.nextPosition > 0 && this.nextPosition < this.array.length / 4) {
+      this.resize(this.array.length / 2);
+    }
     return item;
   }
 
   isEmpty(): boolean {
     return this.array.length === 0;
+  }
+
+  private resize(size: number) {
+    const copy = Array.from({length: size}, () => null);
+    for (let i = 0; i < this.array.length; i++) {
+      copy[i] = this.array[i];
+    }
+    this.array = copy;
   }
 }
