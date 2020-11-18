@@ -26,6 +26,9 @@ npm run percolation
 * Stack w/resizable array
 * Queue w/linked list
 * Queue w/resizable array
+* Queue w/resizable circular array
+* Bag with Iterator
+* Arithmetic expression evaluation (Dijkstra's two stack algorithm)
 ```
 npm run w2test
 ```

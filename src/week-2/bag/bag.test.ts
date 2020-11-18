@@ -1,5 +1,6 @@
 import {Bag} from './bag';
 
+
 describe('Bag test', () => {
   const inputs = [
     [10, '20', 'asd', true, false, null],
