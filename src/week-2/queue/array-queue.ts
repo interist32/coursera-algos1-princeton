@@ -2,9 +2,9 @@ import {Queueu} from './queue.interface';
 
 
 export class ArrayQueue<T> implements Queueu<T> {
-  private array: T[] = Array.from({length: 1}, () => null);
-  private head = 0;
-  private tail = 0;
+  protected array: T[] = Array.from({length: 1}, () => null);
+  protected head = 0;
+  protected tail = 0;
 
   enqueue(item: T): void {
     if (this.isFull()) {
@@ -31,7 +31,7 @@ export class ArrayQueue<T> implements Queueu<T> {
     return this.array[this.head] === null;
   }
 
-  private resize(size: number) {
+  protected resize(size: number) {
     const copy = Array.from({length: size}, () => null);
 
     for (let i = this.head, j = 0; i <= this.tail; i++, j++) {
@@ -43,7 +43,7 @@ export class ArrayQueue<T> implements Queueu<T> {
     this.head = 0;
   }
 
-  private isFull(): boolean {
+  protected isFull(): boolean {
     return (Math.abs(this.tail - this.head) === this.array.length - 1);
   }
 }

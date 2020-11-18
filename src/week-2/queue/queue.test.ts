@@ -1,4 +1,5 @@
 import {ArrayQueue} from './array-queue';
+import {CircularArrayQueue} from './circular-array-queue';
 import {LinkedListQueue} from './linked-list-queue';
 import {Queueu} from './queue.interface';
 
@@ -7,6 +8,7 @@ describe('Queue test', () => {
   const queueImplementations: ({new (): Queueu<string>})[] = [
     LinkedListQueue,
     ArrayQueue,
+    CircularArrayQueue,
   ];
 
   /**
@@ -20,6 +22,7 @@ describe('Queue test', () => {
     {input: '5 4 - 3 - -', expected: '5 4 3'},
     {input: '1 2 3 -', expected: '1'},
     {input: '1 2 3 4 5 6 7 8 - - - - - - - -', expected: '1 2 3 4 5 6 7 8'},
+    {input: '1 2 3 4 - 5 - - ', expected: '1 2 3'},
   ];
 
   for (const QueueImplementation of queueImplementations) {
