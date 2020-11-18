@@ -23,7 +23,9 @@ npm run percolation
 ## Week 2
 ### Stacks and Queues
 * Stack w/linked list
-* Stack w/array
+* Stack w/resizable array
+* Queue w/linked list
+* Queue w/resizable array
 ```
 npm run w2test
 ```
