@@ -93,9 +93,13 @@ export class DequeCircularArray<T> implements Deque<T> {
 
   private resize(size: number) {
     const copy = Array.from({length: size}, () => null);
+
+    let i = this.first;
     let j = 0;
+
     while (j < this.array.length) {
-      copy[j] = this.array[this.first++ % this.array.length];
+      copy[j] = this.array[i];
+      i = (i + 1) % this.array.length;
       j++;
     }
     this.array = copy;
