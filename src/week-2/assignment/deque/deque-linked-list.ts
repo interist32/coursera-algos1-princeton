@@ -1,4 +1,4 @@
-import {LinkedListNode} from '../linked-list-node/linked-list-node';
+import {LinkedListNode} from '../../linked-list-node/linked-list-node';
 import {Deque} from './deque.interface';
 
 
