@@ -1,6 +1,10 @@
 import {Deque} from './deque.interface';
 
 
+/**
+ * Time complexity of all operations is O(1).
+ * resize() has O(N) but it's amortized as O(1)
+ */
 export class DequeCircularArray<T> implements Deque<T> {
   private array: T[] = [null];
   private first = 0;
@@ -17,9 +21,7 @@ export class DequeCircularArray<T> implements Deque<T> {
   addFirst(item: T): void {
     this.assertNotNull(item);
 
-    if (this.isFull()) {
-      this.resize(this.array.length * 2);
-    }
+    this.doubleSizeIfNecessary();
     this.first--;
     if (this.first === -1) {
       this.first = this.array.length - 1;
@@ -30,9 +32,7 @@ export class DequeCircularArray<T> implements Deque<T> {
   addLast(item: T): void {
     this.assertNotNull(item);
 
-    if (this.isFull()) {
-      this.resize(this.array.length * 2);
-    }
+    this.doubleSizeIfNecessary();
     this.last = (this.last + 1) % this.array.length;
     this.array[this.last] = item;
   }
@@ -43,6 +43,7 @@ export class DequeCircularArray<T> implements Deque<T> {
     const item = this.array[this.first];
     this.array[this.first] = null;
     this.first = (this.first + 1) % this.array.length;
+    this.halveSizeIfPossible();
     return item;
   }
 
@@ -55,6 +56,7 @@ export class DequeCircularArray<T> implements Deque<T> {
     if (this.last === -1) {
       this.last = this.array.length - 1;
     }
+    this.halveSizeIfPossible();
     return item;
   }
 
@@ -71,6 +73,22 @@ export class DequeCircularArray<T> implements Deque<T> {
 
   private isFull(): boolean {
     return this.size() === this.array.length;
+  }
+
+  private canBeHalved(): boolean {
+    return this.size() < this.array.length / 4;
+  }
+
+  private doubleSizeIfNecessary() {
+    if (this.isFull()) {
+      this.resize(this.array.length * 2);
+    }
+  }
+
+  private halveSizeIfPossible() {
+    if (this.canBeHalved()) {
+      this.resize(this.array.length / 2);
+    }
   }
 
   private resize(size: number) {
