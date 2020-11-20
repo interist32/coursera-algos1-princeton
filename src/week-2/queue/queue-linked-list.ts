@@ -2,7 +2,7 @@ import {LinkedListNode} from '../linked-list-node/linked-list-node';
 import {Queueu} from './queue.interface';
 
 
-export class LinkedListQueue<T> implements Queueu<T> {
+export class QueueLinkedList<T> implements Queueu<T> {
   private first: LinkedListNode<T> = null;
   private last: LinkedListNode<T> = null;
 

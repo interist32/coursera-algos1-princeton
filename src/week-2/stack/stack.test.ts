@@ -1,12 +1,12 @@
-import {ArrayStack} from './array-stack';
-import {LinkedListStack} from './linked-list-stack';
+import {StackArray} from './stack-array';
+import {StackLinkedList} from './stack-linked-list';
 import {Stack} from './stack.interface';
 
 
 describe('Stack test', () => {
   const stackImplementations: ({new (): Stack<string>})[] = [
-    LinkedListStack,
-    ArrayStack,
+    StackLinkedList,
+    StackArray,
   ];
 
   /**

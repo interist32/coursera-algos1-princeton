@@ -1,7 +1,7 @@
-import {ArrayQueue} from './array-queue';
+import {QueueArray} from './queue-array';
 
 
-export class CircularArrayQueue<T> extends ArrayQueue<T> {
+export class QueueCircularArray<T> extends QueueArray<T> {
   protected resize(size: number) {
     if (this.tail >= this.head) {
       super.resize(size);

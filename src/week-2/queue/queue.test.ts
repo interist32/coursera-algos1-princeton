@@ -1,14 +1,14 @@
-import {ArrayQueue} from './array-queue';
-import {CircularArrayQueue} from './circular-array-queue';
-import {LinkedListQueue} from './linked-list-queue';
+import {QueueArray} from './queue-array';
+import {QueueCircularArray} from './queue-circular-array';
+import {QueueLinkedList} from './queue-linked-list';
 import {Queueu} from './queue.interface';
 
 
 describe('Queue test', () => {
   const queueImplementations: ({new (): Queueu<string>})[] = [
-    LinkedListQueue,
-    ArrayQueue,
-    CircularArrayQueue,
+    QueueLinkedList,
+    QueueArray,
+    QueueCircularArray,
   ];
 
   /**

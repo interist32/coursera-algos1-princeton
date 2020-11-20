@@ -1,7 +1,7 @@
 import {Queueu} from './queue.interface';
 
 
-export class ArrayQueue<T> implements Queueu<T> {
+export class QueueArray<T> implements Queueu<T> {
   protected array: T[] = Array.from({length: 1}, () => null);
   protected head = 0;
   protected tail = 0;

@@ -1,4 +1,4 @@
-import {LinkedListStack} from '../stack/linked-list-stack';
+import {StackLinkedList} from '../stack/stack-linked-list';
 
 
 /**
@@ -6,8 +6,8 @@ import {LinkedListStack} from '../stack/linked-list-stack';
  * @param expression
  */
 export function evaluateExpression(expression: string): number {
-  const operators = new LinkedListStack<string>();
-  const operands = new LinkedListStack<number>();
+  const operators = new StackLinkedList<string>();
+  const operands = new StackLinkedList<number>();
 
   for (const char of expression) {
     if (['+', '-', '/', '*'].includes(char)) {

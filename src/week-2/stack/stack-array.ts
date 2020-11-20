@@ -5,7 +5,7 @@ import {Stack} from './stack.interface';
  * In Javascript array are dynamic, but for the purity of experiment I treat it
  * like in Java or C++ imitating the process of allocation memory.
  */
-export class ArrayStack<T> implements Stack<T> {
+export class StackArray<T> implements Stack<T> {
   private array = Array.from({length: 1}, () => null);
   private nextPosition = 0;
 

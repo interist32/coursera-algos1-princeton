@@ -2,7 +2,7 @@ import {LinkedListNode} from '../linked-list-node/linked-list-node';
 import {Stack} from './stack.interface';
 
 
-export class LinkedListStack<T> implements Stack<T> {
+export class StackLinkedList<T> implements Stack<T> {
   private firstNode: LinkedListNode<T>|null = null;
 
   push(item: T) {
