@@ -17,7 +17,7 @@ npm run w1test
 ### Assignment
 * Percolation problem
 ```
-npm run percolation
+npm run w1assignment
 ```
 
 ## Week 2
@@ -26,9 +26,17 @@ npm run percolation
 * Stack w/resizable array
 * Queue w/linked list
 * Queue w/resizable array
-* Queue w/resizable circular array
+* Queue w/circular resizable array
 * Bag with Iterator
 * Arithmetic expression evaluation (Dijkstra's two stack algorithm)
 ```
 npm run w2test
+```
+### Assignment
+* Deque implementation using
+  * Linked list
+  * Resizable array
+  * Circular resizable array
+```
+npm run w2assignment
 ```
