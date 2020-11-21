@@ -6,16 +6,19 @@ import {Deque} from './deque.interface';
  * resize() has O(N) but it's amortized as O(1)
  */
 export class DequeCircularArray<T> implements Deque<T> {
-  private array: T[] = [null];
-  private first = 0;
-  private last = 0;
+  protected array: T[] = [null];
+  protected first = 0;
+  protected last = 0;
 
   isEmpty(): boolean {
     return this.array[this.first] === null && this.array[this.last] === null;
   }
 
   size(): number {
-    return this.isEmpty() ? 0 : Math.abs(this.last - this.first) + 1;
+    return this.isEmpty() ?
+        0 :
+        this.first - 1 === this.last ? this.array.length :
+                                       Math.abs(this.last - this.first) + 1;
   }
 
   addFirst(item: T): void {
@@ -44,6 +47,7 @@ export class DequeCircularArray<T> implements Deque<T> {
     this.array[this.first] = null;
     this.first = (this.first + 1) % this.array.length;
     this.halveSizeIfPossible();
+    this.resetIfEmpty();
     return item;
   }
 
@@ -57,6 +61,7 @@ export class DequeCircularArray<T> implements Deque<T> {
       this.last = this.array.length - 1;
     }
     this.halveSizeIfPossible();
+    this.resetIfEmpty();
     return item;
   }
 
@@ -97,14 +102,22 @@ export class DequeCircularArray<T> implements Deque<T> {
     let i = this.first;
     let j = 0;
 
-    while (j < this.array.length) {
+    while (j < this.size()) {
       copy[j] = this.array[i];
       i = (i + 1) % this.array.length;
       j++;
     }
     this.array = copy;
     this.first = 0;
-    this.last = j - 1;
+    this.last = j === 0 ? 0 : j - 1;
+  }
+
+  private resetIfEmpty() {
+    if (this.isEmpty()) {
+      this.array = [null];
+      this.first = 0;
+      this.last = 0;
+    }
   }
 
   private assertEmptyStack() {

@@ -10,7 +10,9 @@
     "w1test": "npm run build && jest dist/week-1",
     "w1assignment": "npm run build && node ./dist/week-1/assignment",
     "w2test": "npm run build && jest dist/week-2",
-    "w2assignment": "npm run build && jest dist/week-2/assignment"
+    "w2assignment-deque": "npm run build && jest dist/week-2/assignment",
+    "w2assignment-randomized-queue": "npm run build && node ./dist/week-2/assignment/randomized-queue",
+    "w2assignment": "npm run w2assignment-deque && npm run w2assignment-randomized-queue"
   },
   "author": "",
   "license": "ISC",

@@ -37,6 +37,10 @@ npm run w2test
   * Linked list
   * Resizable array
   * Circular resizable array
-```
-npm run w2assignment
-```
+  ```
+  npm run w2assignment-deque
+  ```
+* Randomized queue
+  ```
+  npm run w2assignment-randomized-queue
+  ```

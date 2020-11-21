@@ -48,8 +48,39 @@ for (const DequeImplementation of dequeImplementations) {
 
     it('tricky one', () => {
       deque.addFirst(1);
-      deque.removeFirst();
-      deque.addLast(1);
+      deque.addLast(2);
+      deque.addLast(3);
+      deque.addFirst(4);
+      deque.addFirst(5);
+      deque.addFirst(6);
+      deque.addFirst(7);
+      deque.addLast(8);
+      deque.addFirst(9);
+      expect(deque.removeLast()).toBe(8);
+      expect(deque.removeLast()).toBe(3);
+      expect(deque.removeLast()).toBe(2);
+      expect(deque.removeLast()).toBe(1);
+      expect(deque.removeFirst()).toBe(9);
+    });
+
+    it('one more tricky', () => {
+      deque.addFirst(1);
+      deque.addFirst(2);
+      deque.addLast(3);
+      deque.addLast(4);
+      deque.addLast(5);
+      deque.addLast(6);
+      deque.addFirst(7);
+      deque.addLast(8);
+      deque.addFirst(9);
+      expect(deque.removeFirst()).toBe(9);
+      expect(deque.removeFirst()).toBe(7);
+      expect(deque.removeLast()).toBe(8);
+      expect(deque.removeLast()).toBe(6);
+      expect(deque.removeLast()).toBe(5);
+      expect(deque.removeFirst()).toBe(2);
+      expect(deque.removeLast()).toBe(4);
+      expect(deque.removeLast()).toBe(3);
       expect(deque.removeLast()).toBe(1);
     });
 
@@ -90,6 +121,7 @@ for (const DequeImplementation of dequeImplementations) {
       expect(iterator.next().value).toBe(4);
       expect(iterator.next().done).toBe(true);
 
+      debugger;
       deque.addFirst(2);
       deque.addFirst(1);
       deque.addLast(3);

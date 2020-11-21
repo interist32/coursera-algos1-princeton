@@ -1,3 +1,4 @@
+import {getRandom} from '../../utils/getRandom';
 import Percolation from './percolation';
 
 
@@ -17,8 +18,8 @@ export default class PercolationStats {
 
     for (let i = 0; i < trials; i++) {
       while (!this.percolation.percolates()) {
-        const row = this.getRandomInt(1, this.n);
-        const column = this.getRandomInt(1, this.n);
+        const row = getRandom(1, this.n);
+        const column = getRandom(1, this.n);
         this.percolation.open(row, column);
       }
 
@@ -48,11 +49,5 @@ export default class PercolationStats {
   confidenceHi(): number {
     return this.mean() +
         1.96 * this.stddev() / (Math.sqrt(this.results.length));
-  }
-
-  getRandomInt(min: number, max: number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
