@@ -29,6 +29,11 @@ npm run w1assignment
 * Queue w/circular resizable array
 * Bag with Iterator
 * Arithmetic expression evaluation (Dijkstra's two stack algorithm)
+
+* Selection sort
+* Insertion sort
+* Shell sort
+* Shuffling
 ```
 npm run w2test
 ```
