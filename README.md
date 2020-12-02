@@ -53,6 +53,7 @@ npm run w2test
 ## Week 3
 ### Mergesort
 * Recursive implementation
+* Bottom-up implementation (w/o recursive)
 
 ```
 npm run w3test

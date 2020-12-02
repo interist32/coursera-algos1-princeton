@@ -1,5 +1,6 @@
 import {getRandom} from '../../utils/getRandom';
 import {mergeSort} from './merge-sort';
+import {mergeSortBottomUp} from './merge-sort-bottom-up';
 
 
 describe('Sorting', () => {
@@ -16,6 +17,7 @@ describe('Sorting', () => {
 
   const algos = [
     mergeSort,
+    mergeSortBottomUp,
   ];
 
   for (const algo of algos) {
