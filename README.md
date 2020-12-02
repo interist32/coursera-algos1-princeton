@@ -49,3 +49,11 @@ npm run w2test
   ```
   npm run w2assignment-randomized-queue
   ```
+
+## Week 3
+### Mergesort
+* Recursive implementation
+
+```
+npm run w3test
+```
