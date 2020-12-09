@@ -54,7 +54,10 @@ npm run w2test
 ### Mergesort
 * Recursive implementation
 * Bottom-up implementation (w/o recursive)
-
 ```
 npm run w3test
+```
+### Assignment
+```
+npm run w3assignment
 ```
