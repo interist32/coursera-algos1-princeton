@@ -13,7 +13,6 @@ export class BruteCollinearPoints extends CollinearPointsBase {
   }
 
   private doWork() {
-    debugger;
     for (let p = 0; p < this.points.length; p++) {
       let min = this.points[p];
       let max = this.points[p];
