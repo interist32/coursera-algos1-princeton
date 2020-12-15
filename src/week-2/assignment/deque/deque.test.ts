@@ -121,7 +121,6 @@ for (const DequeImplementation of dequeImplementations) {
       expect(iterator.next().value).toBe(4);
       expect(iterator.next().done).toBe(true);
 
-      debugger;
       deque.addFirst(2);
       deque.addFirst(1);
       deque.addLast(3);

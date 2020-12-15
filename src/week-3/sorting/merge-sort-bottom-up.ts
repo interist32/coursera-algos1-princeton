@@ -1,5 +1,4 @@
 export function mergeSortBottomUp<T>(arr: T[]) {
-  debugger;
   for (let sz = 1; sz < arr.length; sz *= 2) {
     for (let lo = 0; lo < arr.length - sz; lo += sz * 2) {
       const hi = Math.min(lo + sz * 2 - 1, arr.length - 1);
