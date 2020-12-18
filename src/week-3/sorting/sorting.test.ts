@@ -1,6 +1,8 @@
 import {getRandom} from '../../utils/getRandom';
+
 import {mergeSort} from './merge-sort';
 import {mergeSortBottomUp} from './merge-sort-bottom-up';
+import {quickSort, quickSortWithShuffling} from './quick-sort';
 
 
 describe('Sorting', () => {
@@ -8,6 +10,7 @@ describe('Sorting', () => {
       [
         1,
         10,
+        100,
         1000,
         10000,
       ]
@@ -18,6 +21,8 @@ describe('Sorting', () => {
   const algos = [
     mergeSort,
     mergeSortBottomUp,
+    quickSort,
+    quickSortWithShuffling,
   ];
 
   for (const algo of algos) {
