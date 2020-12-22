@@ -69,6 +69,7 @@ npm run w3assignment
 * MaxPQ implementation w/unordered array
 * MaxPQ implementation w/binary heap
 * MinPQ implementation w/unordered array
+* MinPQ implementation w/binary heap
 ```
 npm run w4test
 ```

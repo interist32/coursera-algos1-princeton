@@ -1,7 +1,8 @@
 import {swap} from '../../utils/swap';
+import {MaxBinaryHeap as MaxBinaryHeapInterface} from './binary-heap.interface';
 
 
-export class MaxBinaryHeap<T> implements MaxBinaryHeap<T> {
+export class MaxBinaryHeap<T> implements MaxBinaryHeapInterface<T> {
   private readonly arr: T[] = [];
 
   insert(value: T) {

@@ -2,7 +2,7 @@ import {MaxBinaryHeap} from './max-binary-heap';
 
 
 describe('MaxBinaryHeap', () => {
-  it('wors as expected', () => {
+  it('works as expected', () => {
     const maxHeap = new MaxBinaryHeap();
     maxHeap.insert(10);
     expect(maxHeap.getArrCopy()).toEqual([10]);
@@ -12,7 +12,7 @@ describe('MaxBinaryHeap', () => {
     expect(maxHeap.getArrCopy()).toEqual([10, 9, 8]);
     maxHeap.insert(15);
     expect(maxHeap.getArrCopy()).toEqual([15, 10, 8, 9]);
-    debugger;
+
     // Removing
     expect(maxHeap.removeMax()).toBe(15);
     expect(maxHeap.getArrCopy()).toEqual([10, 9, 8]);

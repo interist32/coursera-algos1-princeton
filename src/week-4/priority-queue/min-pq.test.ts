@@ -1,8 +1,9 @@
+import {MinPQBinaryHeap} from './min-pq-binary-heap';
 import {MinPQUnorderedArray} from './min-pq-unordered-array';
 
 
 describe('Min Priority Queue', () => {
-  for (const MaxPQImpl of [MinPQUnorderedArray]) {
+  for (const MaxPQImpl of [MinPQUnorderedArray, MinPQBinaryHeap]) {
     testLibrary(MaxPQImpl);
   }
 });
