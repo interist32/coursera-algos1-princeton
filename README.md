@@ -63,3 +63,11 @@ npm run w3test
 ```
 npm run w3assignment
 ```
+
+## Week 4
+### Priority Queues
+* MaxPQ implementation
+* MinPQ implementation
+```
+npm run w4test
+```

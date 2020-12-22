@@ -14,7 +14,8 @@
     "w2assignment-randomized-queue": "npm run build && node ./dist/week-2/assignment/randomized-queue",
     "w2assignment": "npm run w2assignment-deque && npm run w2assignment-randomized-queue",
     "w3test": "npm run build && jest dist/week-3",
-    "w3assignment": "npm run build && node ./dist/week-3/assignment"
+    "w3assignment": "npm run build && node ./dist/week-3/assignment",
+    "w4test": "npm run build && jest dist/week-4"
   },
   "author": "",
   "license": "ISC",
