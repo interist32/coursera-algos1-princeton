@@ -4,12 +4,12 @@ import {MaxPQUnorderedArray} from './max-pq-unordered-array';
 
 describe('Max Priority Queue', () => {
   for (const MaxPQImpl of [MaxPQUnorderedArray, MaxPQBinaryHeap]) {
-    testLibrary(MaxPQImpl.name, MaxPQImpl);
+    testLibrary(MaxPQImpl);
   }
 });
 
-function testLibrary(name: string, Library: any) {
-  describe(`${name}`, () => {
+function testLibrary(Library: any) {
+  describe(`${Library.name}`, () => {
     let maxPQ;
 
     beforeEach(() => {

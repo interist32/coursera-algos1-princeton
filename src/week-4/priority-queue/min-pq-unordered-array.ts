@@ -1,4 +1,4 @@
-export class MinPQ<T> {
+export class MinPQUnorderedArray<T> {
   private len = 0;
   private readonly arr: T[] = [];
 
