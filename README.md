@@ -66,8 +66,8 @@ npm run w3assignment
 
 ## Week 4
 ### Priority Queues
-* MaxPQ implementation
-* MinPQ implementation
+* MaxPQ implementation w/unordered array
+* MinPQ implementation w/unordered array
 ```
 npm run w4test
 ```

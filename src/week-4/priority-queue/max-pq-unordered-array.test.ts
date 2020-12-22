@@ -1,4 +1,4 @@
-import {MaxPQ} from './max-pq';
+import {MaxPQ} from './max-pq-unordered-array';
 
 describe('Max PQ', () => {
   let maxPQ;
