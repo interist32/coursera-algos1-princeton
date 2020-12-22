@@ -1,4 +1,4 @@
-import {MinPQ} from './min-pq';
+import {MinPQ} from './min-pq-unordered-array';
 
 describe('Min PQ', () => {
   let minPQ;

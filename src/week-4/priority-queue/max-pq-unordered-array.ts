@@ -1,4 +1,7 @@
-export class MaxPQ<T> {
+import {MaxPQ} from './pq-interface';
+
+
+export class MaxPQUnorderedArray<T> implements MaxPQ<T> {
   private len = 0;
   private readonly arr: T[] = [];
 
