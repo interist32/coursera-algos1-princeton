@@ -7,10 +7,9 @@ export function minKthElement(arr: number[], k: number): number {
   const maxPQ = new MaxPQBinaryHeap<number>();
 
   for (let i = 0; i < arr.length; i++) {
-    if (maxPQ.size() === k) {
+    maxPQ.insert(arr[i]);
+    if (maxPQ.size() > k) {
       maxPQ.delMax();
-    } else {
-      maxPQ.insert(arr[i]);
     }
   }
   return maxPQ.delMax();
