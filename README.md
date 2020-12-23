@@ -70,6 +70,7 @@ npm run w3assignment
 * MaxPQ implementation w/binary heap
 * MinPQ implementation w/unordered array
 * MinPQ implementation w/binary heap
+* HeapSort implementation
 
 * Find k-th min/max elements in array using Priority Queue (just for fun)
 ```
