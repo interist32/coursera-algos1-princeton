@@ -96,22 +96,6 @@ export class BST {
     return node;
   }
 
-  private findNodeByValue(value: number): BSTNode|null {
-    let node = this.root;
-
-    while (node !== null) {
-      if (value < node.value) {
-        node = node.left;
-      } else if (value > node.value) {
-        node = node.right;
-      } else {
-        return node;
-      }
-    }
-
-    return node;
-  }
-
   inorderView(): number[] {
     const items: number[] = [];
     this.inorder(this.root, items);

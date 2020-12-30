@@ -77,3 +77,10 @@ npm run w3assignment
 ```
 npm run w4test
 ```
+
+## Week 5
+### Balanced Search Trees
+* Red-Black Binary Search Tree implementation (w/o deletion)
+```
+npm run w5test
+```
